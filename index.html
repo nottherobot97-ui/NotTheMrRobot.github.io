@@ -1,106 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Streaming Setup</title>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Streaming Setup</title>
+  <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-        font-family: 'Roboto', sans-serif;
-        height: 100vh;
-        background: linear-gradient(135deg, #0a0a2a, #000000);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 50px 20px;
-        overflow-x: hidden;
-        color: #fff;
+      font-family: 'Roboto', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1a0033, #000000);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
     }
     h1 {
-        font-size: 3em;
-        color: #b388ff;
-        text-shadow: 0 0 10px #b388ff, 0 0 20px #b388ff;
-        animation: blink 1.5s infinite;
-        margin-bottom: 50px;
+      font-size: 3em;
+      color: #b388ff;
+      text-shadow: 0 0 10px #b388ff, 0 0 20px #b388ff;
+      animation: blink 1.7s infinite;
+      margin-bottom: 50px;
     }
     @keyframes blink {
-        0%, 50%, 100% { opacity: 1; }
-        25%, 75% { opacity: 0.4; }
+      0%,50%,100% { opacity: 1; }
+      25%,75% { opacity: 0.4; }
     }
     .setup-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 25px;
-        width: 100%;
-        max-width: 1200px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1300px;
     }
     .card {
-        background: rgba(20, 0, 40, 0.5);
-        border: 3px solid;
-        border-radius: 15px;
-        padding: 20px;
-        backdrop-filter: blur(10px);
-        transition: transform 0.3s, box-shadow 0.3s;
-        text-align: center;
-        font-weight: bold;
-        font-size: 1.1em;
-        cursor: pointer;
+      background: rgba(40, 0, 60, 0.6);
+      border-radius: 20px;
+      padding: 40px 20px;
+      backdrop-filter: blur(15px);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
     }
     .card:hover {
-        transform: translateY(-10px) scale(1.05);
-        box-shadow: 0 0 20px currentColor;
+      transform: translateY(-15px) scale(1.06);
+      box-shadow: 0 0 30px currentColor;
     }
-    .motherboard { border-color: #ff6bff; color: #ff6bff; }
-    .cpu { border-color: #ff3dff; color: #ff3dff; }
-    .gpu { border-color: #b388ff; color: #b388ff; }
-    .ram { border-color: #9c27b0; color: #9c27b0; }
-    .cooler { border-color: #7b1fa2; color: #7b1fa2; }
-    .storage { border-color: #e040fb; color: #e040fb; }
-    .psu { border-color: #ba68c8; color: #ba68c8; }
-    .monitor { border-color: #8e24aa; color: #8e24aa; }
-    .monitor2 { border-color: #6a1b9a; color: #6a1b9a; }
-    .webcam { border-color: #ab47bc; color: #ab47bc; }
-    .mouse { border-color: #ce93d8; color: #ce93d8; }
-    .keyboard { border-color: #d1c4e9; color: #d1c4e9; }
-    .headset { border-color: #b39ddb; color: #b39ddb; }
-    /* Floating animation background */
+    .card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+      opacity: 0.85;
+    }
+    .card .label {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    /* رنگ‌ها برای هر کارت */
+    .motherboard { border: 3px solid #d16aff; color: #d16aff; }
+    .cpu { border: 3px solid #f062ff; color: #f062ff; }
+    .gpu { border: 3px solid #b388ff; color: #b388ff; }
+    .ram { border: 3px solid #ae38ff; color: #ae38ff; }
+    .cooler { border: 3px solid #8e24aa; color: #8e24aa; }
+    .storage { border: 3px solid #e040fb; color: #e040fb; }
+    .psu { border: 3px solid #ba68c8; color: #ba68c8; }
+    .monitor { border: 3px solid #9c27b0; color: #9c27b0; }
+    .monitor2 { border: 3px solid #7b1fa2; color: #7b1fa2; }
+    .webcam { border: 3px solid #ab47bc; color: #ab47bc; }
+    .mouse { border: 3px solid #ce93d8; color: #ce93d8; }
+    .keyboard { border: 3px solid #d1c4e9; color: #d1c4e9; }
+    .headset { border: 3px solid #b39ddb; color: #b39ddb; }
+
     body::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(128,0,128,0.3), transparent 70%);
-        animation: floatbg 20s linear infinite;
-        z-index: -1;
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle, rgba(128,0,128,0.3), transparent 70%);
+      animation: floatbg 25s linear infinite;
+      z-index: -1;
     }
     @keyframes floatbg {
-        0% { transform: translate(0, 0); }
-        50% { transform: translate(-100px, 50px); }
-        100% { transform: translate(0, 0); }
+      0% { transform: translate(0,0); }
+      50% { transform: translate(-120px, 60px); }
+      100% { transform: translate(0,0); }
     }
-</style>
+  </style>
 </head>
 <body>
-    <h1>MY STREAMING SETUP</h1>
-    <div class="setup-container">
-        <div class="card motherboard">PRIME B760-PLUS D4</div>
-        <div class="card cpu">Intel Core i5 13400F</div>
-        <div class="card gpu">Msi RTX 2060 Super</div>
-        <div class="card ram">Corsair Vengeance RGB 32GB 3200 TUF Edition</div>
-        <div class="card cooler">Game Max IceBurg 360 Infinity</div>
-        <div class="card storage">Biostar M700 256GB + MSI SPATIUM M371 M2 1TB</div>
-        <div class="card psu">Green 650W UK PLUS Gold</div>
-        <div class="card monitor">Msi G244PF E2</div>
-        <div class="card monitor2">Samsung 20 Inch</div>
-        <div class="card webcam">RAPOO C280 2K</div>
-        <div class="card mouse">Redragon Cobra M711-FPS</div>
-        <div class="card keyboard">Redragon K552</div>
-        <div class="card headset">Razer Kraken V3 X</div>
+  <h1>MY STREAMING SETUP</h1>
+  <div class="setup-container">
+    <div class="card motherboard">
+      <img src="https://img.icons8.com/ios/512/motherboard--v1.png" alt="Motherboard" />
+      <div class="label">PRIME B760-PLUS D4</div>
     </div>
+    <div class="card cpu">
+      <img src="https://img.icons8.com/ios/512/cpu.png" alt="CPU" />
+      <div class="label">Intel Core i5 13400F</div>
+    </div>
+    <div class="card gpu">
+      <img src="https://img.icons8.com/ios/512/graphics-card.png" alt="GPU" />
+      <div class="label">Msi RTX 2060 Super</div>
+    </div>
+    <div class="card ram">
+      <img src="https://img.icons8.com/ios/512/ram.png" alt="RAM" />
+      <div class="label">Corsair Vengeance RGB 32GB 3200</div>
+    </div>
+    <div class="card cooler">
+      <img src="https://img.icons8.com/ios/512/cpu-fan.png" alt="Cooler" />
+      <div class="label">Game Max IceBurg 360 Infinity</div>
+    </div>
+    <div class="card storage">
+      <img src="https://img.icons8.com/ios/512/hdd.png" alt="Storage" />
+      <div class="label">Biostar M700 256GB + MSI SPI 1TB</div>
+    </div>
+    <div class="card psu">
+      <img src="https://img.icons8.com/ios/512/power-supply.png" alt="PSU" />
+      <div class="label">Green 650W UK PLUS Gold</div>
+    </div>
+    <div class="card monitor">
+      <img src="https://img.icons8.com/ios/512/monitor.png" alt="Monitor" />
+      <div class="label">Msi G244PF E2</div>
+    </div>
+    <div class="card monitor2">
+      <img src="https://img.icons8.com/ios/512/monitor.png" alt="Monitor 2" />
+      <div class="label">Samsung 20 Inch</div>
+    </div>
+    <div class="card webcam">
+      <img src="https://img.icons8.com/ios/512/webcam.png" alt="Webcam" />
+      <div class="label">RAPOO C280 2K</div>
+    </div>
+    <div class="card mouse">
+      <img src="https://img.icons8.com/ios/512/mouse.png" alt="Mouse" />
+      <div class="label">Redragon Cobra M711‑FPS</div>
+    </div>
+    <div class="card keyboard">
+      <img src="https://img.icons8.com/ios/512/keyboard.png" alt="Keyboard" />
+      <div class="label">Redragon K552</div>
+    </div>
+    <div class="card headset">
+      <img src="https://img.icons8.com/ios/512/headset.png" alt="Headset" />
+      <div class="label">Razer Kraken V3 X</div>
+    </div>
+  </div>
 </body>
 </html>
