@@ -1,70 +1,106 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Streaming Setup</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Streaming Setup</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: radial-gradient(circle at top, #3a1cff, #120048);
-      font-family: Vazirmatn, sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      color: white;
+        font-family: 'Roboto', sans-serif;
+        height: 100vh;
+        background: linear-gradient(135deg, #0a0a2a, #000000);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 50px 20px;
+        overflow-x: hidden;
+        color: #fff;
     }
     h1 {
-      margin-top: 40px;
-      font-size: 42px;
-      font-weight: 800;
-      text-shadow: 0 0 25px #7cfbff;
+        font-size: 3em;
+        color: #b388ff;
+        text-shadow: 0 0 10px #b388ff, 0 0 20px #b388ff;
+        animation: blink 1.5s infinite;
+        margin-bottom: 50px;
     }
-    .grid {
-      margin: 50px auto;
-      max-width: 1100px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 25px;
+    @keyframes blink {
+        0%, 50%, 100% { opacity: 1; }
+        25%, 75% { opacity: 0.4; }
+    }
+    .setup-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        width: 100%;
+        max-width: 1200px;
     }
     .card {
-      padding: 25px 15px;
-      background: rgba(0, 0, 0, 0.35);
-      border-radius: 18px;
-      backdrop-filter: blur(7px);
-      box-shadow: 0 0 20px rgba(255,255,255,0.1);
-      transition: 0.25s;
+        background: rgba(20, 0, 40, 0.5);
+        border: 3px solid;
+        border-radius: 15px;
+        padding: 20px;
+        backdrop-filter: blur(10px);
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.1em;
+        cursor: pointer;
     }
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 25px rgba(255,255,255,0.25);
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 0 20px currentColor;
     }
-    .title {
-      font-size: 18px;
-      margin-bottom: 10px;
-      opacity: 0.8;
+    .motherboard { border-color: #ff6bff; color: #ff6bff; }
+    .cpu { border-color: #ff3dff; color: #ff3dff; }
+    .gpu { border-color: #b388ff; color: #b388ff; }
+    .ram { border-color: #9c27b0; color: #9c27b0; }
+    .cooler { border-color: #7b1fa2; color: #7b1fa2; }
+    .storage { border-color: #e040fb; color: #e040fb; }
+    .psu { border-color: #ba68c8; color: #ba68c8; }
+    .monitor { border-color: #8e24aa; color: #8e24aa; }
+    .monitor2 { border-color: #6a1b9a; color: #6a1b9a; }
+    .webcam { border-color: #ab47bc; color: #ab47bc; }
+    .mouse { border-color: #ce93d8; color: #ce93d8; }
+    .keyboard { border-color: #d1c4e9; color: #d1c4e9; }
+    .headset { border-color: #b39ddb; color: #b39ddb; }
+    /* Floating animation background */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(128,0,128,0.3), transparent 70%);
+        animation: floatbg 20s linear infinite;
+        z-index: -1;
     }
-    .value {
-      font-size: 20px;
-      font-weight: bold;
+    @keyframes floatbg {
+        0% { transform: translate(0, 0); }
+        50% { transform: translate(-100px, 50px); }
+        100% { transform: translate(0, 0); }
     }
-  </style>
+</style>
 </head>
 <body>
-  <h1>MY STREAMING SETUP</h1>
-
-  <div class="grid">
-    <div class="card"><div class="title">مانیتور</div><div class="value">Dell Full HD</div></div>
-    <div class="card"><div class="title">رم</div><div class="value">32GB DDR4</div></div>
-    <div class="card"><div class="title">گرافیک</div><div class="value">Radeon RX</div></div>
-    <div class="card"><div class="title">پردازنده</div><div class="value">Intel i5</div></div>
-    <div class="card"><div class="title">مادر برد</div><div class="value">ASUS PRIME</div></div>
-    <div class="card"><div class="title">میکروفون</div><div class="value">Razer Seiren Mini</div></div>
-    <div class="card"><div class="title">سیستم عامل</div><div class="value">Windows 11</div></div>
-    <div class="card"><div class="title">هدست</div><div class="value">Razer Kraken</div></div>
-    <div class="card"><div class="title">کیبورد</div><div class="value">RGB Keyboard</div></div>
-    <div class="card"><div class="title">ماوس</div><div class="value">Gaming Mouse</div></div>
-    <div class="card"><div class="title">وبکم</div><div class="value">1080p</div></div>
-    <div class="card"><div class="title">نورپردازی</div><div class="value">Ring Light</div></div>
-  </div>
+    <h1>MY STREAMING SETUP</h1>
+    <div class="setup-container">
+        <div class="card motherboard">PRIME B760-PLUS D4</div>
+        <div class="card cpu">Intel Core i5 13400F</div>
+        <div class="card gpu">Msi RTX 2060 Super</div>
+        <div class="card ram">Corsair Vengeance RGB 32GB 3200 TUF Edition</div>
+        <div class="card cooler">Game Max IceBurg 360 Infinity</div>
+        <div class="card storage">Biostar M700 256GB + MSI SPATIUM M371 M2 1TB</div>
+        <div class="card psu">Green 650W UK PLUS Gold</div>
+        <div class="card monitor">Msi G244PF E2</div>
+        <div class="card monitor2">Samsung 20 Inch</div>
+        <div class="card webcam">RAPOO C280 2K</div>
+        <div class="card mouse">Redragon Cobra M711-FPS</div>
+        <div class="card keyboard">Redragon K552</div>
+        <div class="card headset">Razer Kraken V3 X</div>
+    </div>
 </body>
 </html>
