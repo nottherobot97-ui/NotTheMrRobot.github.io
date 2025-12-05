@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Streaming Setup</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PC Setup</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: 'Roboto', sans-serif;
-      min-height: 100vh;
+      min-height:100vh;
       background: linear-gradient(120deg, #1a0033, #000000);
       color: #fff;
       display: flex;
@@ -31,163 +31,94 @@
     }
     .setup-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      width: 100%;
-      max-width: 1400px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      width:100%;
+      max-width: 1200px;
     }
     .card {
       background: rgba(40, 0, 60, 0.7);
       border-radius: 20px;
-      padding: 30px 20px;
-      backdrop-filter: blur(20px);
+      padding: 25px 15px;
+      backdrop-filter: blur(15px);
       transition: transform 0.3s, box-shadow 0.3s;
       text-align: center;
-      position: relative;
-      overflow: hidden;
       cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
     .card:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 0 40px currentColor;
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 0 30px currentColor;
     }
     .card img {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 20px;
+      width: 70px;
+      height: 70px;
+      margin-bottom: 15px;
       opacity: 0.9;
     }
-    .card .label {
+    .label {
       font-weight: bold;
-      font-size: 1.3em;
+      font-size: 1.2em;
       margin-bottom: 5px;
     }
-    .card .specs {
-      font-size: 0.95em;
-      color: #ddd;
+    .specs {
+      font-size: 0.9em;
+      color: #ccc;
     }
 
-    /* رنگ‌ها برای هر کارت */
     .motherboard { border: 3px solid #d16aff; color: #d16aff; }
     .cpu { border: 3px solid #f062ff; color: #f062ff; }
     .gpu { border: 3px solid #b388ff; color: #b388ff; }
     .ram { border: 3px solid #ae38ff; color: #ae38ff; }
-    .cooler { border: 3px solid #8e24aa; color: #8e24aa; }
     .storage { border: 3px solid #e040fb; color: #e040fb; }
     .psu { border: 3px solid #ba68c8; color: #ba68c8; }
     .monitor { border: 3px solid #9c27b0; color: #9c27b0; }
-    .monitor2 { border: 3px solid #7b1fa2; color: #7b1fa2; }
-    .webcam { border: 3px solid #ab47bc; color: #ab47bc; }
-    .mouse { border: 3px solid #ce93d8; color: #ce93d8; }
-    .keyboard { border: 3px solid #d1c4e9; color: #d1c4e9; }
-    .headset { border: 3px solid #b39ddb; color: #b39ddb; }
-
-    /* بک‌گراند متحرک */
-    body::before {
-      content: '';
-      position: fixed;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at 30% 30%, rgba(128,0,128,0.3), transparent 70%);
-      animation: floatbg 30s linear infinite;
-      z-index: -1;
-    }
-    body::after {
-      content: '';
-      position: fixed;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at 70% 70%, rgba(0,128,255,0.2), transparent 70%);
-      animation: floatbg2 40s linear infinite;
-      z-index: -2;
-    }
-    @keyframes floatbg {
-      0% { transform: translate(0,0) rotate(0deg); }
-      50% { transform: translate(-100px, 80px) rotate(180deg); }
-      100% { transform: translate(0,0) rotate(360deg); }
-    }
-    @keyframes floatbg2 {
-      0% { transform: translate(0,0) rotate(0deg); }
-      50% { transform: translate(80px, -60px) rotate(180deg); }
-      100% { transform: translate(0,0) rotate(360deg); }
-    }
+    .peripheral { border: 3px solid #8e24aa; color: #8e24aa; }
   </style>
 </head>
 <body>
-  <h1>MY STREAMING SETUP</h1>
+  <h1>MY PC SETUP</h1>
   <div class="setup-container">
     <div class="card motherboard">
-      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/motherboard-icon.svg" alt="Motherboard" />
-      <div class="label">PRIME B760-PLUS D4</div>
+      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/motherboard-icon.svg" alt="Motherboard">
+      <div class="label">PRIME B760‑PLUS D4</div>
       <div class="specs">ATX / DDR4 / LGA1700</div>
     </div>
     <div class="card cpu">
-      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/processor-icon.svg" alt="CPU" />
+      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/processor-icon.svg" alt="CPU">
       <div class="label">Intel Core i5 13400F</div>
-      <div class="specs">10 Cores / 16 Threads / 2.5GHz</div>
+      <div class="specs">10 Cores / 16 Threads</div>
     </div>
     <div class="card gpu">
-      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/graphic-card-icon.svg" alt="GPU" />
-      <div class="label">Msi RTX 2060 Super</div>
-      <div class="specs">8GB GDDR6 / Ray Tracing</div>
+      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/graphic-card-icon.svg" alt="GPU">
+      <div class="label">MSI RTX 2060 Super</div>
+      <div class="specs">8GB GDDR6</div>
     </div>
     <div class="card ram">
-      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/ram-icon.svg" alt="RAM" />
+      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/ram-icon.svg" alt="RAM">
       <div class="label">Corsair Vengeance RGB 32GB</div>
-      <div class="specs">2x16GB 3200MHz</div>
-    </div>
-    <div class="card cooler">
-      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/cpu-fan-icon.svg" alt="Cooler" />
-      <div class="label">Game Max IceBurg 360</div>
-      <div class="specs">Liquid Cooling / RGB</div>
+      <div class="specs">2×16GB / 3200MHz</div>
     </div>
     <div class="card storage">
-      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/hdd-icon.svg" alt="Storage" />
-      <div class="label">Biostar M700 + MSI SPATIUM M371</div>
+      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/hdd-icon.svg" alt="Storage">
+      <div class="label">Biostar M700 + MSI SPATIUM</div>
       <div class="specs">256GB SSD + 1TB NVMe</div>
     </div>
     <div class="card psu">
-      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/power-supply-icon.svg" alt="PSU" />
-      <div class="label">Green 650W UK PLUS Gold</div>
-      <div class="specs">80+ Gold / Modular</div>
+      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/power-supply-icon.svg" alt="PSU">
+      <div class="label">Green 650W 80+ Gold</div>
+      <div class="specs">Modular PSU</div>
     </div>
     <div class="card monitor">
-      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/monitor-icon.svg" alt="Monitor" />
-      <div class="label">Msi G244PF E2</div>
-      <div class="specs">144Hz / 1ms / 24”</div>
+      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/monitor-icon.svg" alt="Monitor">
+      <div class="label">MSI G244PF E2</div>
+      <div class="specs">144Hz / 24″</div>
     </div>
-    <div class="card monitor2">
-      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/monitor-icon.svg" alt="Monitor 2" />
-      <div class="label">Samsung 20\"</div>
-      <div class="specs">60Hz / 20”</div>
-    </div>
-    <div class="card webcam">
-      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/webcam-icon.svg" alt="Webcam" />
-      <div class="label">RAPOO C280 2K</div>
-      <div class="specs">2K / 30FPS / Autofocus</div>
-    </div>
-    <div class="card mouse">
-      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/mouse-icon.svg" alt="Mouse" />
+    <div class="card peripheral">
+      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/mouse-icon.svg" alt="Mouse">
       <div class="label">Redragon Cobra M711‑FPS</div>
       <div class="specs">RGB / 10000 DPI</div>
     </div>
-    <div class="card keyboard">
-      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/keyboard-icon.svg" alt="Keyboard" />
-      <div class="label">Redragon K552</div>
-      <div class="specs">Mechanical / RGB</div>
-    </div>
-    <div class="card headset">
-      <img src="https://uxwing.com/wp-content/themes/uxwing/downloads/headset-icon.svg" alt="Headset" />
-      <div class="label">Razer Kraken V3 X</div>
-      <div class="specs">7.1 Surround / RGB</div>
-    </div>
+    <!-- بقیه قطعات مثل کیس، کیبورد، وبکم، هدست رو هم مشابه اضافه کن -->
   </div>
 </body>
 </html>
